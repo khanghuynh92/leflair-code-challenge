@@ -1,0 +1,31 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:1-alpine
+    depends_on:
+      - server
+    ports:
+      - "${NGINX_PORT}:${NGINX_PORT}"
+    volumes:
+      - "./nginx/ssr-default.conf:/etc/nginx/conf.d/default.conf.template"
+    environment:
+      - "NGINX_HOST=${NGINX_HOST}"
+      - "NGINX_PORT=${NGINX_PORT}"
+      - "SERVER_URL=${SERVER_URL}"
+    command: ["/bin/sh", "-c", "cat /etc/nginx/conf.d/default.conf.template | sed -e 's/{NGINX_HOST}/$NGINX_HOST/' -e 's/{NGINX_PORT}/$NGINX_PORT/' -e 's/{SERVER_URL}/$SERVER_URL/' > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
+    restart: on-failure
+
+  server:
+    build: .
+    restart: always
+    environment:
+      - PORT=${PORT}
+      - MONGO_URL=mongodb://mongo:${MONGO_PORT}/${MONGO_DATABASE}
+      - NODE_ENV=production
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:3-jessie
+    # volumes:
+      # - "${MONGO_DIR}:/data/db"
+    restart: on-failure

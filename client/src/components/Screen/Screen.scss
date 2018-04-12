@@ -1,0 +1,23 @@
+.screen-container {
+  border-bottom: 1px solid #7c7c7c;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  height: 60px;
+  margin: 35px 25px 0 25px;
+  padding: 5px 5px 10px 5px;
+  text-align: right;
+  color: black;
+  font-family: Montserrat;
+  font-size: 15px;
+  cursor: pointer;
+
+  .info-box {
+    font-size: 32px;
+    display: block;
+    color: white;
+    font-weight: 600;
+  }
+
+}

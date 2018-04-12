@@ -1,0 +1,139 @@
+swagger: "2.0"
+info:
+  title: "API"
+  description: "This is an api docs for Leflair Code Challenge"
+  version: "1.0.0"
+  contact:
+    name: "Khang Huynh"
+    email: "khanghuynh92@gmail.com"
+host: "localhost"
+basePath: "/api"
+schemes:
+- "http"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+tags:
+- name: "cal"
+  description: "Cal module"
+paths:
+  /cal/add:
+    post:
+      tags:
+      - "cal"
+      description: "Addition"
+      summary: "Return result of addition"
+      parameters:
+          -
+            name: "body"
+            in: "body"
+            description: "Value1 to calculate"
+            required: true
+            schema:
+              $ref: "#/definitions/NewCal"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Cal"
+        default:
+          description: "error operation"
+          schema:
+            $ref: "#/definitions/Error"
+  /cal/minus:
+    post:
+      tags:
+      - "cal"
+      description: "Subtraction"
+      summary: "Return result of subtraction"
+      parameters:
+          -
+            name: "body"
+            in: "body"
+            description: "Value1 to calculate"
+            required: true
+            schema:
+              $ref: "#/definitions/NewCal"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Cal"
+        default:
+          description: "error operation"
+          schema:
+            $ref: "#/definitions/Error"
+  /cal/multiply:
+    post:
+      tags:
+      - "cal"
+      description: "Multiplication"
+      summary: "Return result of multiplication"
+      parameters:
+          -
+            name: "body"
+            in: "body"
+            description: "Value1 to calculate"
+            required: true
+            schema:
+              $ref: "#/definitions/NewCal"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Cal"
+        default:
+          description: "error operation"
+          schema:
+            $ref: "#/definitions/Error"
+  /cal/divide:
+    post:
+      tags:
+      - "cal"
+      description: "Division"
+      summary: "Return result of division"
+      parameters:
+          -
+            name: "body"
+            in: "body"
+            description: "Value1 to calculate"
+            required: true
+            schema:
+              $ref: "#/definitions/NewCal"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Cal"
+        default:
+          description: "error operation"
+          schema:
+            $ref: "#/definitions/Error"
+definitions:
+  NewCal:
+      type: "object"
+      required:
+        - "value1"
+        - "value2"
+      properties:
+        value1:
+          type: "number"
+        value2:
+          type: "number"
+  Cal:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      result:
+        type: "number"
+  Error:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"

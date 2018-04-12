@@ -1,0 +1,23 @@
+.Calculator {
+  border: 1px solid #373737;
+  width: 350px;
+  height: 450px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  background: #373737;
+  text-align: center;
+  margin: auto;
+  margin-top: 100px;
+  -webkit-box-shadow: 10px 15px 69px -22px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 15px 69px -22px rgba(0,0,0,0.75);
+  box-shadow: 10px 15px 69px -22px rgba(0,0,0,0.75);
+
+  .controls-container {
+    margin: 20px 25px 0 25px;
+    width: 300px;
+    height: auto;
+    display: inline-table;
+  }
+}

@@ -1,0 +1,49 @@
+.button-container {
+  .small-btn {
+    height: 50px;
+    width: 25%;
+    background-color: #558188;
+    color: #FF9C5F;
+    float: left;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    background: transparent;
+    border: none;
+    color: #b0b0b0;
+  }
+
+  .small-btn.orange {
+    color: #ff6f6f;
+  }
+
+  .small-btn.white {
+    color: white;
+  }
+
+  .small-btn.controls {
+    font-size: 18px;
+  }
+
+  .small-btn.zerobtn {
+    position: relative;
+  }
+
+  .small-btn.equalsbtn {
+    height: 100px;
+  }
+
+  .small-btn.dot {
+    width: 50%;
+    position: relative;
+  }
+
+  .small-btn:hover {
+    text-decoration: none;
+    background: #646464;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}

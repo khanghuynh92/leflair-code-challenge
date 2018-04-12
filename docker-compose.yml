@@ -1,0 +1,37 @@
+version: '3'
+services:
+  client:
+    build:
+      context: ./client/
+    command: yarn start
+    volumes:
+      - ./client/:/app/src
+      - /app/src/node_modules
+    depends_on:
+      - server
+    ports:
+      - 3000:9000
+    links:
+      - server
+
+  server:
+    build:
+      context: ./server/
+    command: yarn serve
+    depends_on:
+      - mongo
+    volumes:
+      - ./server/:/app/src
+      - /app/src/node_modules
+    ports:
+      - 9000:9000
+    environment:
+      - NODE_ENV=development
+      - MONGO_URL=mongodb://mongo:27017/calculator
+      - PORT=9000
+
+  mongo:
+    image: mongo:3-jessie
+    # volumes:
+      # - "${MONGO_DIR}:/data/db"
+    restart: on-failure
