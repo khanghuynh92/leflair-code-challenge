@@ -240,7 +240,16 @@ module.exports = {
                   options: {
                     plugins: () => [require('autoprefixer')]
                   }
-                }
+                },
+                'sass-loader',
+                {
+                  loader: 'sass-resources-loader',
+                  options: {
+                    resources: [
+                      './config/resources-polyfills.scss',
+                    ]
+                  },
+                },
               ]
           },
 
