@@ -84,6 +84,11 @@ $ yarn lint
 ```
 
 # Running with Docker
+Update client proxy in client/package.json:
+
+![](./images/client-proxy.png)
+
+
 Start via:
 
 ```
