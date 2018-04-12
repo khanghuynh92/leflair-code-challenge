@@ -60,7 +60,7 @@
     "serve": "yarn build && serve build",
     "test": "node scripts/test.js --env=jsdom"
   },
-  "proxy": "http://server:9000",
+  "proxy": "http://localhost:9000",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
