@@ -137,7 +137,16 @@ docker-compose up
 ```
 
 
-# Deploying
+# Deploy to heroku
+
 ```bash
-comming soon..
+git clone https://github.com/khanghuynh92/leflair-code-challenge.git
+cd leflair-code-challenge
+heroku login (enter your credentials)
+heroku create <YOUR_APP_NAME>
+heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs#yarn
+heroku config:set MONGO_URL=<MONGO_URL>
+
+git push heroku master
+heroku open
 ```
