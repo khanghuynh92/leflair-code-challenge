@@ -24,8 +24,7 @@ const app = express();
 app.use(express.static(CLIENT_BUILD_PATH));
 
 app.use(expressValidator());
-
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 app.use('/api', [
   calRoute,
@@ -34,7 +33,7 @@ app.use('/api', [
 const notFoundError = (req, res) => res.send(NOT_FOUND, sendNotFound());
 
 // Index request return the React app, so it can handle routing.
-app.get('/', function(request, response) {
+app.get('/', (request, response) => {
   response.sendFile(path.join(CLIENT_BUILD_PATH, 'index.html'));
 });
 
@@ -42,6 +41,7 @@ app.all('*', notFoundError);
 
 
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+
+console.log(`Running on http://${HOST}:${PORT}`); // eslint-disable-line
 
 module.exports = app; // for testing
