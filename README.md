@@ -141,9 +141,12 @@ docker-compose up
 
 ```bash
 heroku create
+heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs#yarn
+heroku config:set MONGO_URL=<MONGO_URL>
 git push heroku master
 heroku open
 ```
+
 Alternatively, you can deploy your own copy of the app using this button:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/khanghuynh92/leflair-code-challenge)
