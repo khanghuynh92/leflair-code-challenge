@@ -12,7 +12,7 @@ const { sendNotFound } = require('./utils/httpError');
 const calRoute = require('./calculator');
 
 // Constants
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 9000;
 const HOST = '0.0.0.0';
 
 const CLIENT_BUILD_PATH = path.join(__dirname, '../../client/build');
