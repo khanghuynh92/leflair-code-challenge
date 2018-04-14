@@ -118,13 +118,13 @@ Stop:
 docker-compose down
 ```
 
-Run the production:
+Run the production for microservices:
 
 ```
 docker-compose -f docker-compose.prod.yml up
 ```
 
-Run the server side rendering production:
+Run the production for server side rendering
 
 ```
 docker-compose -f docker-compose.ssr-prod.yml up
