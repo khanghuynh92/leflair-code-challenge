@@ -30,6 +30,8 @@ View [Requirements file](./requirements.md).
 
 View [Swagger YAML file](./server/swagger.yaml).
 
+View api specifications at  [`http://localhost:3000/docs`](http://localhost:3000/docs).
+
 # Development
 
 Clone this repository:
