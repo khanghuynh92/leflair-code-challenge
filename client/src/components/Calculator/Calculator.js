@@ -22,13 +22,6 @@ class Calculator extends Component {
     this.onButtonPressed = this.onButtonPressed.bind(this);
   }
 
-
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(nextState);
-
-    return true;
-  }
-
   async calculate(value1, value2, operator) {
     let res = 0;
 
